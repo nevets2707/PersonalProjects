@@ -1,0 +1,29 @@
+import java.util.Random;
+
+
+public class Game 
+{
+	private Board board;
+	public Game()
+	{
+		board = new Board(8, 8);
+	}
+	
+	public void setup()
+	{
+		Random rand = new Random();
+		for(int i = 0; i < ballLoc.length; i++)
+		{
+			
+		}
+	}
+	
+	public void guessLocations(int[] guesses)
+	{
+		for(int i = 0; i < ballLoc.length; i++)
+		{
+			
+		}
+	}
+}
+

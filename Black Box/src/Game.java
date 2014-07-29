@@ -1,32 +1,30 @@
+import java.util.Arrays;
 import java.util.Random;
 
 
 public class Game 
 {
-	private int width, height;
-	private int[] ballLoc;
+	private Board board;
 	public Game()
 	{
-		width = 8;
-		height = 8;
-		ballLoc = new int[4];
+		board = new Board(8, 8);
 	}
 	
 	public void setup()
 	{
 		Random rand = new Random();
-		for(int i = 0; i < ballLoc.length; i++)
+		for(int i = 0; i < board.getNumBalls(); i++)
 		{
-			ballLoc[i] = rand.nextInt(width * height);
+			while(!board.addBall(rand.nextInt(board.getWidth()), rand.nextInt(board.getHeight())));
 		}
 	}
 	
-	public void guessLocations(int[] guesses)
+	public boolean guessLocations(Location[] guesses)
 	{
-		for(int i = 0; i < ballLoc.length; i++)
-		{
-			
-		}
+		if(guesses.length != board.getNumBalls())
+			return false;
+		
+		return Arrays.deepEquals(board.getLocations(), guesses); //TODO: TEST THIS
 	}
 }
 

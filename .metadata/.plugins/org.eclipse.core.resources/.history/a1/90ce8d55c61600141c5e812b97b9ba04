@@ -24,9 +24,4 @@ public class Location
 		return y;
 	}
 	
-	public boolean equals(Location other)
-	{
-		return x == other.x && y == other.y;
-	}
-	
 }
